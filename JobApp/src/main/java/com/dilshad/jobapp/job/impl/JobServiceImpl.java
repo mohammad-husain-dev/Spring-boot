@@ -54,16 +54,16 @@ public class JobServiceImpl implements JobService {
     public boolean updateJob(long id, Job job) {
         ListIterator<Job> iterator=jobs.listIterator();
         while(iterator.hasNext()){
-            Job job1=iterator.next();
-            if(job1.getId()==id){
-                job1.setId(id);
-                job1.setTitle(job.getTitle());
-                job1.setDescription(job.getDescription());
-                job1.setMinSalary(job.getMinSalary());
-                job1.setMaxSalary(job.getMaxSalary());
-                job1.setLocation(job.getLocation());
+            Job j=iterator.next();
+            if(j.getId()==id){
+                j.setId(id);
+                j.setTitle(job.getTitle());
+                j.setDescription(job.getDescription());
+                j.setMinSalary(job.getMinSalary());
+                j.setMaxSalary(job.getMaxSalary());
+                j.setLocation(job.getLocation());
 
-                iterator.set(job1);
+                iterator.set(j);
                 return true;
             }
         }
